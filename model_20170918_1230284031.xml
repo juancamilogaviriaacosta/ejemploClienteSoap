@@ -13,12 +13,58 @@
 <data name="reference"></data>
 </meta>
 <feature_tree>
-:r computador(_r)
-	:o mesa(_r_1)
-	:o portatil(_r_2)
-		:g (_r_2_3) [1,1] 
-			: windows 10(_r_2_3_4)
-			: fedora linux(_r_2_3_5)
+:r Computador(Computador)
+				:o Mesa(Mesa)
+				:o Portatil(Portatil)
+					:g [1,*]
+						: Windows 10(Windows 10)
+						: Fedora(Fedora)
+						: oSX Yosemite(oSX Yosemite)
+				:o Servidor(Servidor)
+					:g [1,*]
+						: Windows Server(Windows Server)
+						: RedHat Linux(RedHat Linux)
+						: OSX server(OSX server)
+				:m Marca(Marca)
+					:g [1,*]
+						: Dell(Dell)
+						: Toshiba(Toshiba)
+						: Lenovo(Lenovo)
+						: Apple(Apple)
+						: Clon(Clon)
+				:m CPU(CPU)
+					:m RAM(RAM)
+						:g [1,*]
+							: 4gb(4gb)
+							: 8gb(8gb)
+							: 16gb(16gb)
+							: 32gb(32gb)
+							: 64gb(64gb)
+					:m Procesador(Procesador)
+						:g [1,*]
+							: Intel(Intel)
+							: Amd(Amd)
+					:m Disco duro(Disco duro)
+						:o 500gb(500gb)
+						:o 1tb(1tb)
+						:o 2tb(2tb)
+						:o 5tb(5tb)
+						:o 10tb(10tb)
+					:o Tarjeta gáfica(Tarjeta gáfica)
+						:g [1,*]
+							: Nvidia(Nvidia)
+							: Ati radeon(Ati radeon)
+				:o Pantalla(Pantalla)
+					:o Tipo(Tipo)
+						:g [1,*]
+							: 3D(3D)
+							: 4K(4K)
+					:o Tamaño(Tamaño)
+						:g [1,*]
+							: 14(14)
+							: 17(17)
+							: 24(24)
+				:o Planta UPS(Planta UPS)
 </feature_tree>
 <constraints>
 </constraints>
