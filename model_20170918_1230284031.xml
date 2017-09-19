@@ -1,71 +1,89 @@
-<!-- This model was created online using SPLOT's Feature Model Editor (http://www.splot-research.org) on lun, sep 18, 2017 - 11:09 PM  -->
-<feature_model name="aa">
+<!-- This model was created online using SPLOT's Feature Model Editor (http://www.splot-research.org) on mar, sep 19, 2017 - 12:14 AM  -->
+<feature_model name="computadores">
 <meta>
-<data name="description">bb</data>
-<data name="creator">cc</data>
+<data name="description">computadores</data>
+<data name="creator">Juan Gaviria</data>
 <data name="address"></data>
-<data name="email">dd</data>
+<data name="email">jc.gaviria@uniandes.edu.co</data>
 <data name="phone"></data>
 <data name="website"></data>
-<data name="organization">ee</data>
+<data name="organization">uniandes</data>
 <data name="department"></data>
 <data name="date"></data>
 <data name="reference"></data>
 </meta>
 <feature_tree>
-:r Computador(Computador)
-				:o Mesa(Mesa)
-				:o Portatil(Portatil)
-					:g [1,*]
-						: Windows 10(Windows 10)
-						: Fedora(Fedora)
-						: oSX Yosemite(oSX Yosemite)
-				:o Servidor(Servidor)
-					:g [1,*]
-						: Windows Server(Windows Server)
-						: RedHat Linux(RedHat Linux)
-						: OSX server(OSX server)
-				:m Marca(Marca)
-					:g [1,*]
-						: Dell(Dell)
-						: Toshiba(Toshiba)
-						: Lenovo(Lenovo)
-						: Apple(Apple)
-						: Clon(Clon)
-				:m CPU(CPU)
-					:m RAM(RAM)
-						:g [1,*]
-							: 4gb(4gb)
-							: 8gb(8gb)
-							: 16gb(16gb)
-							: 32gb(32gb)
-							: 64gb(64gb)
-					:m Procesador(Procesador)
-						:g [1,*]
-							: Intel(Intel)
-							: Amd(Amd)
-					:m Disco duro(Disco duro)
-						:o 500gb(500gb)
-						:o 1tb(1tb)
-						:o 2tb(2tb)
-						:o 5tb(5tb)
-						:o 10tb(10tb)
-					:o Tarjeta gáfica(Tarjeta gáfica)
-						:g [1,*]
-							: Nvidia(Nvidia)
-							: Ati radeon(Ati radeon)
-				:o Pantalla(Pantalla)
-					:o Tipo(Tipo)
-						:g [1,*]
-							: 3D(3D)
-							: 4K(4K)
-					:o Tamaño(Tamaño)
-						:g [1,*]
-							: 14(14)
-							: 17(17)
-							: 24(24)
-				:o Planta UPS(Planta UPS)
+:r computador(_r)
+	:o Mesa(_r_1)
+	:o Portatil(_r_2)
+		:g (_r_2_3) [1,1] 
+			: Windows 10(_r_2_3_4)
+			: Fedora(_r_2_3_5)
+			: oSX Yosemite(_r_2_3_6)
+	:o Servidor(_r_7)
+		:g (_r_7_8) [1,1] 
+			: Windows Server(_r_7_8_9)
+			: RedHat Linux(_r_7_8_10)
+			: OSX server(_r_7_8_11)
+	:m Marca(_r_12)
+		:g (_r_12_13) [1,1] 
+			: Dell(_r_12_13_14)
+			: Toshiba(_r_12_13_15)
+			: Lenovo(_r_12_13_16)
+			: Apple(_r_12_13_17)
+			: Clon(_r_12_13_18)
+	:m CPU(_r_19)
+		:m RAM(_r_19_20)
+			:g (_r_19_20_21) [1,1] 
+				: 4gb(_r_19_20_21_22)
+				: 8gb(_r_19_20_21_23)
+				: 16gb(_r_19_20_21_24)
+				: 32gb(_r_19_20_21_25)
+				: 64gb(_r_19_20_21_26)
+		:m Procesador(_r_19_27)
+			:g (_r_19_27_28) [1,1] 
+				: Intel(_r_19_27_28_29)
+				: Amd(_r_19_27_28_30)
+		:m Disco duro(_r_19_31)
+			:g (_r_19_31_32) [1,1] 
+				: 500gb(_r_19_31_32_33)
+				: 1tb(_r_19_31_32_34)
+				: 2tb(_r_19_31_32_35)
+				: 5tb(_r_19_31_32_36)
+				: 10tb(_r_19_31_32_37)
+		:m tarjeta grafica(_r_19_38)
+			:g (_r_19_38_39) [1,1] 
+				: Nvidia(_r_19_38_39_40)
+				: Ati radeon(_r_19_38_39_41)
+	:o Pantalla(_r_42)
+		:o tipo(_r_42_45)
+			:g (_r_42_45_46) [1,*] 
+				: 3D(_r_42_45_46_47)
+				: 4K(_r_42_45_46_48)
+			:g (_r_42_45_49) [1,1] 
+				: 14(_r_42_45_49_50)
+				: 17(_r_42_45_49_52)
+				: 24(_r_42_45_49_53)
+	:o planta ups(_r_54)
 </feature_tree>
 <constraints>
+constraint_17:~_r_7 or _r_19_20_21_25 or _r_19_20_21_26
+constraint_18:~_r_7 or _r_19_31_32_36 or _r_19_31_32_37
+constraint_3:~_r_2 or ~_r_42_45_46_47
+constraint_11:~_r_2 or ~_r_7_8_11
+constraint_2:~_r_2 or _r_42
+constraint_12:~_r_1 or ~_r_7_8_9
+constraint_5:~_r_2 or _r_19_31_32_33 or _r_19_31_32_34 or _r_19_31_32_35
+constraint_4:~_r_2 or ~_r_42_45_46_48
+constraint_10:~_r_2 or ~_r_7_8_10
+constraint_7:~_r_2 or _r_19_20_21_22 or _r_19_20_21_23 or _r_19_20_21_24
+constraint_15:~_r_2_3_6 or _r_7_8_11 or _r_12_13_17
+constraint_6:~_r_1 or _r_19_31_32_33 or _r_19_31_32_34 or _r_19_31_32_35
+constraint_16:~_r_7 or _r_7_8_9 or _r_7_8_10 or _r_7_8_11
+constraint_9:~_r_2 or ~_r_7_8_9
+constraint_13:~_r_1 or ~_r_7_8_10
+constraint_8:~_r_1 or _r_19_20_21_22 or _r_19_20_21_23 or _r_19_20_21_24
+constraint_14:~_r_1 or ~_r_7_8_11
+constraint_1:~_r_2 or ~_r_12_13_18
 </constraints>
 </feature_model>
