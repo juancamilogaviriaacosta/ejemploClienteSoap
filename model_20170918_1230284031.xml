@@ -1,0 +1,25 @@
+<!-- This model was created online using SPLOT's Feature Model Editor (http://www.splot-research.org) on lun, sep 18, 2017 - 11:09 PM  -->
+<feature_model name="aa">
+<meta>
+<data name="description">bb</data>
+<data name="creator">cc</data>
+<data name="address"></data>
+<data name="email">dd</data>
+<data name="phone"></data>
+<data name="website"></data>
+<data name="organization">ee</data>
+<data name="department"></data>
+<data name="date"></data>
+<data name="reference"></data>
+</meta>
+<feature_tree>
+:r computador(_r)
+	:o mesa(_r_1)
+	:o portatil(_r_2)
+		:g (_r_2_3) [1,1] 
+			: windows 10(_r_2_3_4)
+			: fedora linux(_r_2_3_5)
+</feature_tree>
+<constraints>
+</constraints>
+</feature_model>
