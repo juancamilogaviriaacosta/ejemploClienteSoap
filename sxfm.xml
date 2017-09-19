@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+	<feature_model name="FeatureIDE model">
+		<feature_tree>
+			:r Computador(Computador)
+				:o Mesa(Mesa)
+				:o Portatil(Portatil)
+					:g [1,*]
+						: Windows 10(Windows 10)
+						: Fedora(Fedora)
+						: oSX Yosemite(oSX Yosemite)
+				:o Servidor(Servidor)
+					:g [1,*]
+						: Windows Server(Windows Server)
+						: RedHat Linux(RedHat Linux)
+						: OSX server(OSX server)
+				:m Marca(Marca)
+					:g [1,*]
+						: Dell(Dell)
+						: Toshiba(Toshiba)
+						: Lenovo(Lenovo)
+						: Apple(Apple)
+						: Clon(Clon)
+				:m CPU(CPU)
+					:m RAM(RAM)
+						:g [1,*]
+							: 4gb(4gb)
+							: 8gb(8gb)
+							: 16gb(16gb)
+							: 32gb(32gb)
+							: 64gb(64gb)
+					:m Procesador(Procesador)
+						:g [1,*]
+							: Intel(Intel)
+							: Amd(Amd)
+					:m Disco duro(Disco duro)
+						:o 500gb(500gb)
+						:o 1tb(1tb)
+						:o 2tb(2tb)
+						:o 5tb(5tb)
+						:o 10tb(10tb)
+					:o Tarjeta gáfica(Tarjeta gáfica)
+						:g [1,*]
+							: Nvidia(Nvidia)
+							: Ati radeon(Ati radeon)
+				:o Pantalla(Pantalla)
+					:o Tipo(Tipo)
+						:g [1,*]
+							: 3D(3D)
+							: 4K(4K)
+					:o Tamaño(Tamaño)
+						:g [1,*]
+							: 14(14)
+							: 17(17)
+							: 24(24)
+				:o Planta UPS(Planta UPS)
+		</feature_tree>
+		<constraints>
+			C1:~Portatil  or  ~Clon
+			C2:~Portatil  or  Pantalla
+			C3:~Portatil  or  ~3D
+			C4:~Portatil  or  ~4K
+			C5:~Portatil  or  500gb  or  1tb  or  2tb
+			C6:~Mesa  or  500gb  or  1tb  or  2tb
+			C7:~Portatil  or  4gb  or  8gb  or  16gb
+			C8:~Mesa  or  4gb  or  8gb  or  16gb
+			C9:~Portatil  or  ~Windows Server
+			C10:~Portatil  or  ~RedHat Linux
+			C11:~Portatil  or  ~OSX server
+			C12:~Mesa  or  ~Windows Server
+			C13:~Mesa  or  ~RedHat Linux
+			C14:~Mesa  or  ~OSX server
+			C15:~Apple  or  OSX server  or  oSX Yosemite
+			C16:~Servidor  or  Windows Server  or  RedHat Linux  or  OSX server
+			C17:~Servidor  or  32gb  or  64gb
+			C18:~Servidor  or  5tb  or  10tb
+		</constraints>
+	</feature_model>
